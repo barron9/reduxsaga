@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { TextInput, Button, Title, Checkbox, Chip } from 'react-native-paper';
-import { addPlace } from './place';
+//import { addPlace } from './place';
 //import { listRepos } from './reducer';
 class Login extends Component {
   static navigationOptions = {
@@ -12,7 +12,6 @@ class Login extends Component {
   state = {}
   componentDidMount() {
     //this.props.dispatch({type:'INC'})
-
     // this.props.listRepos.dispatch("GET_REPOS")
   }
   componentWillReceiveProps(nextProps) {
@@ -60,18 +59,7 @@ class Login extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'white',
-    padding: 20,
-    flex: 1
-  },
-  item: {
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
-  }
-});
+
 
 const mapStateToProps = state => {
   return {
@@ -93,5 +81,16 @@ const mapDispatchToProps = dispatch => {
     }
   }
 }
-
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    padding: 20,
+    flex: 1
+  },
+  item: {
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc'
+  }
+});
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

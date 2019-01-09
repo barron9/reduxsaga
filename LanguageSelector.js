@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, StatusBar, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { TextInput, Button, Title, Checkbox, Chip } from 'react-native-paper';
-import { addPlace } from './place';
+//import { addPlace } from './place';
 
 //import { listRepos } from './reducer';
 
@@ -86,7 +86,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         add: (name) => {
-            dispatch(addPlace(name))
+            //dispatch(addPlace(name))
+            dispatch(
+                {
+                  type: 'baglan',
+                  payload: name
+                }
+              )
         }
     }
 }
