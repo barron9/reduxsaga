@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import placeReducer from './placeReducer';
 import createSagaMiddleware from 'redux-saga'
-import { helloSaga, apirequest } from './sagas'
+import { helloSaga, root } from './sagas'
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import LanguageSelector from './LanguageSelector';
 console.disableYellowBox = true;
@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
 
 
 const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(apirequest)
+sagaMiddleware.run(root)
 
 
 const AppNavigator = createStackNavigator({

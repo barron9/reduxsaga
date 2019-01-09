@@ -25,6 +25,12 @@ function fetchdata() {
 
 }
 
+function* testasync(){
+
+  yield delay(4000)
+  //yield put({type:''})
+}
+
 
 function* test(a) {
   //yield delay(4000)
@@ -34,7 +40,7 @@ function* test(a) {
   console.log(incomingResponse)
 
 }
-export function* apirequest() {
+export function* root() {
 
   yield takeEvery('baglan', () => { test('saga..takeevery') })
 
