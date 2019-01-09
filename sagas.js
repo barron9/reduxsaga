@@ -24,7 +24,13 @@ function fetchdata() {
     });
 
 }
+function* fetchNews() {
+  yield delay(4000)
 
+  const json = yield fetch('https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=f86f324681bf445a8b7b0cb37ae341da')
+        .then(response => response.json(), );    
+  yield put({ type: 'baglan', json: json.articles, });
+}
 function* testasync(){
 
   yield delay(4000)
@@ -41,7 +47,8 @@ function* test(a) {
 
 }
 export function* root() {
+  yield takeEvery('baglan', fetchNews)
 
-  yield takeEvery('baglan', () => { test('saga..takeevery') })
+  //yield takeEvery('baglan', () => { test('saga..takeevery') })
 
 }

@@ -13,7 +13,7 @@ const placeReducer = (state = initialState, action) => {
         ...state,
         places: state.places.concat({
           key: Math.random(),
-          value: action.payload
+          json: JSON.stringify(action)
         })
       };
     default:
