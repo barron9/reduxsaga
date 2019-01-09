@@ -94,7 +94,7 @@ const mapDispatchToProps = dispatch => {
     add: (name) => {
       //dispatch(addPlace(name))
       dispatch(
-       {
+        {
           type: 'baglan',
           payload: name
         }
