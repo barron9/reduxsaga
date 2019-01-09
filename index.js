@@ -26,7 +26,13 @@ sagaMiddleware.run(apirequest)
 const AppNavigator = createStackNavigator({
     LanguageSelector: { screen: LanguageSelector },
     Home: {screen: Login}
-});
+}, {
+    transitionConfig: () => ({
+      transitionSpec: {
+        duration: 0,  // Set the animation duration time as 0 !!
+      },
+    }),
+  });
 const AppContainer = createAppContainer(AppNavigator);
 
 

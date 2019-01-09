@@ -30,8 +30,8 @@ class LanguageSelector extends Component {
     }
     authapi() {
         this.props.navigation.navigate('Home')
-        this.props.add('baglanma denemesi')
-        alert(JSON.stringify(this.props))
+       // this.props.add('baglanma denemesi')
+        //alert(JSON.stringify(this.props))
     }
     render() {
         const { repos } = this.props;
