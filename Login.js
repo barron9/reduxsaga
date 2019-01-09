@@ -17,15 +17,15 @@ class Login extends Component {
 
     // this.props.listRepos.dispatch("GET_REPOS")
   }
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     debugger;
     const k = nextProps;
-alert(JSON.stringify(nextProps))
+    alert(JSON.stringify(nextProps))
   }
   authapi() {
     this.props.add('baglanma denemesi')
     //alert(JSON.stringify(this.props))
-   // this.props.navigation.navigate('LanguageSelector')
+    // this.props.navigation.navigate('LanguageSelector')
 
   }
   render() {
@@ -39,13 +39,13 @@ alert(JSON.stringify(nextProps))
         />
         <Text style={{ fontWeight: '900', color: '#888', fontSize: 40, marginBottom: 40, marginTop: 50 }}>Hoşgeldiniz</Text>
         <TextInput
-        style={{backgroundColor:'white'}}
+          style={{ backgroundColor: 'white' }}
           label='Eposta'
           value={this.state.user}
           onChangeText={(user) => this.setState({ user })}
 
         />
-        <TextInput style={{ marginTop: 10 ,backgroundColor:'white'}}
+        <TextInput style={{ marginTop: 10, backgroundColor: 'white' }}
           label='Şifre'
           value={this.state.pass}
           onChangeText={(pass) => this.setState({ pass })}
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = state => {
   return {
     places: state
-  
+
   }
 }
 
