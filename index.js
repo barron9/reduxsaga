@@ -9,6 +9,7 @@ import createSagaMiddleware from 'redux-saga'
 import { helloSaga, apirequest } from './sagas'
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import LanguageSelector from './LanguageSelector';
+console.disableYellowBox = true;
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -24,10 +25,7 @@ sagaMiddleware.run(apirequest)
 
 const AppNavigator = createStackNavigator({
     LanguageSelector: { screen: LanguageSelector },
-
-    Home: {
-        screen: Login
-    }
+    Home: {screen: Login}
 });
 const AppContainer = createAppContainer(AppNavigator);
 

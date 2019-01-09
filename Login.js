@@ -20,6 +20,8 @@ class Login extends Component {
   authapi() {
     this.props.add('baglanma denemesi')
     alert(JSON.stringify(this.props))
+   // this.props.navigation.navigate('LanguageSelector')
+
   }
   render() {
     const { repos } = this.props;

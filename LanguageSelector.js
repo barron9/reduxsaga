@@ -8,7 +8,7 @@ import { addPlace } from './place';
 
 class LanguageSelector extends Component {
     static navigationOptions = {
-        title: 'Details',
+        title: 'lang',
         header: null
     };
     state = {}
@@ -29,6 +29,7 @@ class LanguageSelector extends Component {
         // this.props.listRepos.dispatch("GET_REPOS")
     }
     authapi() {
+        this.props.navigation.navigate('Home')
         this.props.add('baglanma denemesi')
         alert(JSON.stringify(this.props))
     }
@@ -41,15 +42,17 @@ class LanguageSelector extends Component {
                     backgroundColor="white"
                     barStyle="dark-content"
                 />
-                <Text style={{ fontWeight: '900', color: '#888', fontSize: 20, marginBottom: 40, marginTop: 50 }}>Dil Seçiniz</Text>
+                <Text style={{ fontWeight: '900', color: '#888', fontSize: 20, marginBottom: 40, marginTop: 50 }}>Please Select</Text>
 
                 <FlatList
                     data={lang}
-                    renderItem={({ item }) => <Text style={{fontWeight:'500',color:'#888',margin:10}}>{item.longform}</Text>}
+                    renderItem={({ item }) => 
+                        <Text style={{ fontWeight: '100', color: '#888', margin: 10, fontSize: 16 }}>{item.longform}</Text>
+                    }
                 />
                 <Button mode="contained" onPress={() => this.authapi()} style={{ margin: 10 }}
                 >
-                    GİRİŞ YAP
+                    Continue
 </Button>
                 <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
 
