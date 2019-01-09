@@ -24,7 +24,7 @@ alert(JSON.stringify(nextProps))
   }
   authapi() {
     this.props.add('baglanma denemesi')
-    alert(JSON.stringify(this.props))
+    //alert(JSON.stringify(this.props))
    // this.props.navigation.navigate('LanguageSelector')
 
   }
