@@ -3,9 +3,7 @@ import { View, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
 import { connect } from 'react-redux';
 import { TextInput, Button, Title, Checkbox, Chip } from 'react-native-paper';
 import { addPlace } from './place';
-
 //import { listRepos } from './reducer';
-
 class Login extends Component {
   static navigationOptions = {
     title: 'Details',
@@ -25,13 +23,11 @@ class Login extends Component {
   authapi() {
     this.props.add('user,pass')
     //alert(JSON.stringify(this.props))
-    // this.props.navigation.navigate('LanguageSelector')
-
+    //this.props.navigation.navigate('LanguageSelector')
   }
   render() {
     const { repos } = this.props;
     return (
-
       <View style={styles.container}>
         <StatusBar
           backgroundColor="white"
@@ -43,7 +39,6 @@ class Login extends Component {
           label='Eposta'
           value={this.state.user}
           onChangeText={(user) => this.setState({ user })}
-
         />
         <TextInput style={{ marginTop: 10, backgroundColor: 'white' }}
           label='Şifre'
@@ -60,7 +55,6 @@ class Login extends Component {
           GİRİŞ YAP
         </Button>
         <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
-
       </View>
     );
   }
@@ -78,9 +72,6 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc'
   }
 });
-
-
-
 
 const mapStateToProps = state => {
   return {
