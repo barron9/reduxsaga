@@ -29,23 +29,12 @@ function* fetchNews() {
 
   const json = yield fetch('https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=f86f324681bf445a8b7b0cb37ae341da')
         .then(response => response.json(), );    
-  yield put({ type: 'baglan', json: json.articles, });
-}
-function* testasync(){
-
-  yield delay(4000)
-  //yield put({type:''})
+  yield put({ type: 'received', json: json.articles, });
 }
 
 
-function* test(a) {
-  //yield delay(4000)
-  alert(a)
 
-  const incomingResponse = yield (fetchdata)
-  console.log(incomingResponse)
 
-}
 export function* root() {
   yield takeEvery('baglan', fetchNews)
 

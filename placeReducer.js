@@ -3,7 +3,9 @@
 
 const initialState = {
   placeName: '',
-  places: []
+  places: [],
+  news:[],
+ 
 };
 
 const placeReducer = (state = initialState, action) => {
@@ -16,6 +18,14 @@ const placeReducer = (state = initialState, action) => {
           json: JSON.stringify(action)
         })
       };
+      case 'received':
+      return{
+        ...state,
+        news:state.news.concat({
+          key: Math.random(),
+          json: action.json
+        })
+      }
     default:
       return state;
   }
