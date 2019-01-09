@@ -7,6 +7,10 @@ import { addPlace } from './place';
 //import { listRepos } from './reducer';
 
 class Login extends Component {
+  static navigationOptions = {
+    title: 'Details',
+    header:null
+  };
     state={}
   componentDidMount() {
       //this.props.dispatch({type:'INC'})
