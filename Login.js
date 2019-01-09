@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet,StatusBar } from 'react-native';
 import { connect } from 'react-redux';
-import { TextInput ,Button,Title ,Checkbox  } from 'react-native-paper';
+import { TextInput ,Button,Title ,Checkbox ,Chip  } from 'react-native-paper';
 import { addPlace } from './place';
 
 //import { listRepos } from './reducer';
@@ -51,7 +51,8 @@ class Login extends Component {
     >
  GİRİŞ YAP
 </Button>
-<Text style={{fontSize:8,color:'gray'}}>rnavigation-redux-saga</Text>
+<Chip  onPress={() => console.log('Pressed')} style={{fontSize:8,color:'gray',alignItems:'center'}}>rnavigation-redux-saga </Chip>
+
    </View>
     );
   }
