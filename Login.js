@@ -23,7 +23,7 @@ class Login extends Component {
     alert(JSON.stringify(nextProps))
   }
   authapi() {
-    this.props.add('baglanma denemesi')
+    this.props.add('user,pass')
     //alert(JSON.stringify(this.props))
     // this.props.navigation.navigate('LanguageSelector')
 
@@ -58,7 +58,7 @@ class Login extends Component {
         <Button mode="contained" onPress={() => this.authapi()} style={{ margin: 10 }}
         >
           GİRİŞ YAP
-</Button>
+        </Button>
         <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
 
       </View>
