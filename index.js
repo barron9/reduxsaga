@@ -8,6 +8,7 @@ import placeReducer from './placeReducer';
 import createSagaMiddleware from 'redux-saga'
 import { helloSaga, apirequest } from './sagas'
 import { createStackNavigator, createAppContainer } from "react-navigation";
+import LanguageSelector from './LanguageSelector';
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -22,6 +23,8 @@ sagaMiddleware.run(apirequest)
 
 
 const AppNavigator = createStackNavigator({
+    LanguageSelector: { screen: LanguageSelector },
+
     Home: {
         screen: Login
     }

@@ -14,7 +14,10 @@ import {
 import { Provider, connect } from 'react-redux';
 import React from 'react';
 import Login from './Login'
+import LanguageSelector from './LanguageSelector';
 const AppNavigator = createStackNavigator({
+  LanguageSelector: { screen: LanguageSelector },
+
   Home: { screen: Login },
 });
 
