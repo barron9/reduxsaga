@@ -17,6 +17,11 @@ class Login extends Component {
 
     // this.props.listRepos.dispatch("GET_REPOS")
   }
+  componentWillReceiveProps(nextProps){
+    debugger;
+    const k = nextProps;
+alert(nextProps)
+  }
   authapi() {
     this.props.add('baglanma denemesi')
     alert(JSON.stringify(this.props))
