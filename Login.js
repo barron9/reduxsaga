@@ -32,12 +32,13 @@ class Login extends Component {
         />
         <Text style={{ fontWeight: '900', color: '#888', fontSize: 40, marginBottom: 40, marginTop: 50 }}>Hoşgeldiniz</Text>
         <TextInput
+        style={{backgroundColor:'white'}}
           label='Eposta'
           value={this.state.user}
           onChangeText={(user) => this.setState({ user })}
 
         />
-        <TextInput style={{ marginTop: 10 }}
+        <TextInput style={{ marginTop: 10 ,backgroundColor:'white'}}
           label='Şifre'
           value={this.state.pass}
           onChangeText={(pass) => this.setState({ pass })}
