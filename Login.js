@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet,StatusBar } from 'react-native';
+import { View, Text, FlatList, StyleSheet, StatusBar } from 'react-native';
 import { connect } from 'react-redux';
-import { TextInput ,Button,Title ,Checkbox ,Chip  } from 'react-native-paper';
+import { TextInput, Button, Title, Checkbox, Chip } from 'react-native-paper';
 import { addPlace } from './place';
 
 //import { listRepos } from './reducer';
@@ -9,59 +9,59 @@ import { addPlace } from './place';
 class Login extends Component {
   static navigationOptions = {
     title: 'Details',
-    header:null
+    header: null
   };
-    state={}
+  state = {}
   componentDidMount() {
-      //this.props.dispatch({type:'INC'})
-      
-     // this.props.listRepos.dispatch("GET_REPOS")
-    }
- authapi(){
-  this.props.add('baglanma denemesi')
-  alert(JSON.stringify(this.props))
- }
+    //this.props.dispatch({type:'INC'})
+
+    // this.props.listRepos.dispatch("GET_REPOS")
+  }
+  authapi() {
+    this.props.add('baglanma denemesi')
+    alert(JSON.stringify(this.props))
+  }
   render() {
     const { repos } = this.props;
     return (
-    
-        <View style={styles.container}>
+
+      <View style={styles.container}>
         <StatusBar
-     backgroundColor="white"
-     barStyle="dark-content"
-   />
-        <Text style={{fontWeight:'900',color:'#888',fontSize:40,marginBottom:40,marginTop:50}}>Hoşgeldiniz</Text>
-        <TextInput 
-     label='Eposta'
-     value={this.state.user}
-     onChangeText={(user)=>this.setState({user})}
+          backgroundColor="white"
+          barStyle="dark-content"
+        />
+        <Text style={{ fontWeight: '900', color: '#888', fontSize: 40, marginBottom: 40, marginTop: 50 }}>Hoşgeldiniz</Text>
+        <TextInput
+          label='Eposta'
+          value={this.state.user}
+          onChangeText={(user) => this.setState({ user })}
 
-   />
-      <TextInput style={{marginTop:10}}
-     label='Şifre'
-     value={this.state.pass}
-     onChangeText={(pass)=>this.setState({pass})}
-     secureTextEntry
-   />
-     <View style={{flexDirection:'row',alignItems:'center',justifyContent:'flex-start'}}><Checkbox
-     status={this.state.checked ? 'checked' : 'unchecked'}
-     onPress={() => { this.setState({ checked: !this.state.checked }); }}
-   /><Text>Beni hatırla</Text></View>
-    <Button  mode="contained" onPress={() => this.authapi()} style={{margin:10}}
-    >
- GİRİŞ YAP
+        />
+        <TextInput style={{ marginTop: 10 }}
+          label='Şifre'
+          value={this.state.pass}
+          onChangeText={(pass) => this.setState({ pass })}
+          secureTextEntry
+        />
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}><Checkbox
+          status={this.state.checked ? 'checked' : 'unchecked'}
+          onPress={() => { this.setState({ checked: !this.state.checked }); }}
+        /><Text>Beni hatırla</Text></View>
+        <Button mode="contained" onPress={() => this.authapi()} style={{ margin: 10 }}
+        >
+          GİRİŞ YAP
 </Button>
-<Chip  onPress={() => console.log('Pressed')} style={{fontSize:8,color:'gray',alignItems:'center',position:'absolute',bottom:5}}>rnavigation-redux-saga </Chip>
+        <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
 
-   </View>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:'white',
-    margin:20,
+    backgroundColor: 'white',
+    margin: 20,
     flex: 1
   },
   item: {
