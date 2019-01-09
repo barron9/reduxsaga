@@ -92,7 +92,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     add: (name) => {
-      dispatch(addPlace(name))
+      //dispatch(addPlace(name))
+      dispatch(
+       {
+          type: 'baglan',
+          payload: name
+        }
+      )
     }
   }
 }
