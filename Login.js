@@ -51,7 +51,7 @@ class Login extends Component {
     >
  GİRİŞ YAP
 </Button>
-<Chip  onPress={() => console.log('Pressed')} style={{fontSize:8,color:'gray',alignItems:'center'}}>rnavigation-redux-saga </Chip>
+<Chip  onPress={() => console.log('Pressed')} style={{fontSize:8,color:'gray',alignItems:'center',position:'absolute',bottom:5}}>rnavigation-redux-saga </Chip>
 
    </View>
     );
