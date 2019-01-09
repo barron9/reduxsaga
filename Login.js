@@ -20,7 +20,7 @@ class Login extends Component {
   componentWillReceiveProps(nextProps){
     debugger;
     const k = nextProps;
-alert(nextProps)
+alert(JSON.stringify(nextProps))
   }
   authapi() {
     this.props.add('baglanma denemesi')
