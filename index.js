@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers,applyMiddleware  } from 'redux';
 import placeReducer from './placeReducer';
 import createSagaMiddleware from 'redux-saga'
-import { helloSaga } from './sagas'
+import { helloSaga, apirequest } from './sagas'
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const sagaMiddleware = createSagaMiddleware()
 
@@ -17,11 +18,20 @@ const rootReducer = combineReducers({
 
 
 const store = createStore(rootReducer,applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(helloSaga)
+sagaMiddleware.run(apirequest)
+
+
+const AppNavigator = createStackNavigator({
+    Home: {
+      screen: Login
+    }
+  });
+  const AppContainer = createAppContainer(AppNavigator);
+
 
 const RNRedux = () => (
   <Provider store = { store }>
-    <Login />
+    <AppContainer />
   </Provider>
 )
 

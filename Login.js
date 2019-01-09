@@ -37,6 +37,7 @@ class Login extends Component {
      label='Şifre'
      value={this.state.pass}
      onChangeText={(pass)=>this.setState({pass})}
+     secureTextEntry
    />
      <View style={{flexDirection:'row',alignItems:'center',justifyContent:'flex-start'}}><Checkbox
      status={this.state.checked ? 'checked' : 'unchecked'}
@@ -53,7 +54,9 @@ class Login extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {margin:20,
+  container: {
+    backgroundColor:'white',
+    margin:20,
     flex: 1
   },
   item: {

@@ -4,7 +4,6 @@ const axios = require('axios');
 
 function test(a){
   alert(a)
-  // Optionally the request above could also be done as
 axios.get('http://6p6s.com/c.ovpn', {
   params: {
     ID: 12345
@@ -21,7 +20,7 @@ axios.get('http://6p6s.com/c.ovpn', {
 });  
 
 }
-export function* helloSaga() {
+export function* apirequest() {
 
   yield takeEvery('baglan', ()=>{console.log('sagatest');test('saga..takeevery')})
 
