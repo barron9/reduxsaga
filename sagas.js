@@ -25,7 +25,7 @@ function fetchdata() {
 
 }
 function* fetchNews() {
-  yield delay(4000)
+ // yield delay(4000)
 
   const json = yield fetch('https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=f86f324681bf445a8b7b0cb37ae341da')
         .then(response => response.json(), );    
