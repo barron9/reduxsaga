@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, StatusBar,ScrollView } from 'react-native';
+import { View, Text, FlatList, StyleSheet, StatusBar, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { TextInput, Button, Title, Checkbox, Chip } from 'react-native-paper';
 //import { addPlace } from './place';
@@ -14,22 +14,22 @@ class Login extends Component {
     //this.props.dispatch({type:'INC'})
     // this.props.listRepos.dispatch("GET_REPOS")
   }
-  static getDerivedStateFromProps(nextProps, prevState){
-    
-    if(nextProps!==prevState){
-     // alert(JSON.stringify(nextProps))
+  static getDerivedStateFromProps(nextProps, prevState) {
 
-      return { someState: nextProps};
-   }
-   else return null;
- }
- /** 
-  componentWillReceiveProps(nextProps) {
-    debugger;
-    const k = nextProps;
-    alert(JSON.stringify(nextProps))
+    if (nextProps !== prevState) {
+      // alert(JSON.stringify(nextProps))
+
+      return { someState: nextProps };
+    }
+    else return null;
   }
-  */
+  /** 
+   componentWillReceiveProps(nextProps) {
+     debugger;
+     const k = nextProps;
+     alert(JSON.stringify(nextProps))
+   }
+   */
   authapi() {
     this.props.add('user,pass')
     //alert(JSON.stringify(this.props))
@@ -64,9 +64,14 @@ class Login extends Component {
         >
           GİRİŞ YAP
         </Button>
-        <ScrollView>
-        <Text>{JSON.stringify(this.state.someState)}</Text>
-        </ScrollView>
+
+        {this.state.someState.places.places.news[0] &&
+          <FlatList
+            data={this.state.someState.places.places.news[0].json}
+            renderItem={({ item }) => <Text style={{ fontWeight: 'bold', margin: 4 }}>{item.title + item.description}</Text>}
+          />
+        }
+
         <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
       </View>
     );
