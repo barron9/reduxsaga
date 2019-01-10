@@ -37,7 +37,7 @@ function* fetchNews(resource) {
 
 export function* root() {
   //yield takeEvery('baglan', fetchNews)
-  yield call(fetchAll)
+  yield takeLatest('baglan',fetchAll)
   /*
   yield all([
     call(fetchResource, 'users'),     // task1

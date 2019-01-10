@@ -25,7 +25,23 @@ const placeReducer = (state = initialState, action) => {
           key: Math.random(),
           json: action.json
         })
-      }
+      };
+      case 'get_products':
+      return{
+        ...state,
+        products:state.products.concat({
+          key:Math.random(),
+          json:action.json
+        })
+      };
+      case 'receive_products':
+      return{
+        ...state,
+        products:state.products.concat({
+          key:Math.random(),
+          json:action.json
+        })
+      };     
     default:
       return state;
   }
