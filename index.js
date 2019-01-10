@@ -22,13 +22,19 @@ const initialState = {
     places:[],
    
   };
-
+  const enhancers = compose(
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    );
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, {},
-    composeWithDevTools(applyMiddleware(sagaMiddleware))
-    
+    /*
+    compose(
+        //applyMiddleware(sagaMiddleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+    )*/
+    enhancers
     );
-sagaMiddleware.run(root)
+//sagaMiddleware.run(root)
 
 
 const AppNavigator = createStackNavigator({
