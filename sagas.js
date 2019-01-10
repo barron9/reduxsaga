@@ -1,4 +1,4 @@
-import { put, takeEvery, all,call,fork } from 'redux-saga/effects'
+import { put, takeEvery, all, call, fork } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 const axios = require('axios');
 
@@ -25,9 +25,10 @@ function* fetchAll() {
   const task2 = yield fork(fetchNews, 'us')
   yield call(delay, 1000)
 }
+
 function* fetchNews(resource) {
   // yield delay(4000)
-  const json = yield fetch('https://newsapi.org/v2/top-headlines?country='+resource+'&apiKey=f86f324681bf445a8b7b0cb37ae341da')
+  const json = yield fetch('https://newsapi.org/v2/top-headlines?country=' + resource + '&apiKey=f86f324681bf445a8b7b0cb37ae341da')
     .then(response => response.json());
   yield put({ type: 'received', json: json.articles, });
 }
@@ -35,6 +36,13 @@ function* fetchNews(resource) {
 export function* root() {
   //yield takeEvery('baglan', fetchNews)
   yield call(fetchAll)
+  /*
+  yield all([
+    call(fetchResource, 'users'),     // task1
+    call(fetchResource, 'comments'),  // task2,
+    call(delay, 1000)
+  ])
+  */
   //yield takeEvery('baglan', () => { test('saga..takeevery') })
 }
 
