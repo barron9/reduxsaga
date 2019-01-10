@@ -15,7 +15,7 @@ const placeReducer = (state = initialState, action) => {
         ...state,
         places: state.places.concat({
           key: Math.random(),
-          json: JSON.stringify(action)
+          json: action.type
         })
       };
       case 'received':

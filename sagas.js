@@ -2,10 +2,7 @@ import { put, takeEvery, all } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 const axios = require('axios');
 
-
-
 function fetchdata() {
-
   axios.get('http://6p6s.com/c.ovpn', {
     params: {
       ID: 12345
@@ -22,22 +19,39 @@ function fetchdata() {
     .then(function () {
       // always executed
     });
-
 }
 function* fetchNews() {
   // yield delay(4000)
-
-  const json = yield fetch('https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=f86f324681bf445a8b7b0cb37ae341da')
+  const json = yield fetch('https://newsapi.org/v2/top-headlines?country=tr&apiKey=f86f324681bf445a8b7b0cb37ae341da')
     .then(response => response.json());
   yield put({ type: 'received', json: json.articles, });
 }
 
-
-
-
 export function* root() {
   yield takeEvery('baglan', fetchNews)
-
   //yield takeEvery('baglan', () => { test('saga..takeevery') })
-
 }
+
+/*
+
+import { delay } from 'redux-saga'
+import { fork, call, put } from 'redux-saga/effects'
+import api from './somewhere/api' // app specific
+import { receiveData } from './somewhere/actions' // app specific
+
+function* fetchAll() {
+  const task1 = yield fork(fetchResource, 'users')
+  const task2 = yield fork(fetchResource, 'comments')
+  yield call(delay, 1000)
+}
+
+function* fetchResource(resource) {
+  const {data} = yield call(api.fetch, resource)
+  yield put(receiveData(data))
+}
+
+function* main() {
+  yield call(fetchAll)
+}
+
+*/
