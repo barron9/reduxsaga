@@ -1,4 +1,4 @@
-import { put, takeEvery, all, call, fork } from 'redux-saga/effects'
+import { put, takeEvery, all, call, fork, cancel } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 const axios = require('axios');
 
@@ -23,6 +23,8 @@ function fetchdata() {
 function* fetchAll() {
   const task1 = yield fork(fetchNews, 'tr')
   const task2 = yield fork(fetchNews, 'us')
+  cancel(task1)
+  
   yield call(delay, 1000)
 }
 
@@ -30,7 +32,7 @@ function* fetchNews(resource) {
   // yield delay(4000)
   const json = yield fetch('https://newsapi.org/v2/top-headlines?country=' + resource + '&apiKey=f86f324681bf445a8b7b0cb37ae341da')
     .then(response => response.json());
-  yield put({ type: 'received', json: json.articles, });
+  yield put({ type: 'received', json: json.articles, }); //REDUCER ACTION
 }
 
 export function* root() {

@@ -54,8 +54,9 @@ class LanguageSelector extends Component {
                 >
                     Continue
 </Button>
+{/*
                 <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
-
+            */}
             </View>
         );
     }
@@ -97,4 +98,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LanguageSelector)
+export default connect(mapStateToProps)(LanguageSelector)

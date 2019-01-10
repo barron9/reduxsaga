@@ -11,6 +11,8 @@ class Login extends Component {
   };
   state = {}
   componentDidMount() {
+   // this.props.add('user,pass')
+
     //this.props.dispatch({type:'INC'})
     // this.props.listRepos.dispatch("GET_REPOS")
   }
@@ -31,7 +33,12 @@ class Login extends Component {
    }
    */
   authapi() {
-    this.props.add('user,pass')
+   // this.props.add('user,pass')
+    this.props.dispatch(
+      {
+        type: 'baglan',
+        payload: "testestesf"
+      })
     //alert(JSON.stringify(this.props))
     //this.props.navigation.navigate('LanguageSelector')
   }
@@ -73,6 +80,7 @@ class Login extends Component {
         }
 
         <Chip onPress={() => console.log('Pressed')} style={{ fontSize: 8, color: 'gray', alignItems: 'center', position: 'absolute', bottom: 5 }}>rnavigation-redux-saga </Chip>
+
       </View>
     );
   }
@@ -112,4 +120,4 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ccc'
   }
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps)(Login)
