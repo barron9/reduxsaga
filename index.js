@@ -22,19 +22,26 @@ const initialState = {
     places:[],
    
   };
+  let composeEnhancers = composeWithDevTools({
+    realtime: true,
+    name: 'Your Instance Name',
+    hostname: 'localhost',
+    port: 8081, // the port your remotedev server is running at
+});
   const enhancers = compose(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, {},
+//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, {},compose(
+    applyMiddleware(sagaMiddleware))
     /*
     compose(
-        //applyMiddleware(sagaMiddleware),
+    applyMiddleware(sagaMiddleware),
     window.devToolsExtension ? window.devToolsExtension() : f => f
     )*/
-    enhancers
+    //enhancers
     );
-//sagaMiddleware.run(root)
+sagaMiddleware.run(root)
 
 
 const AppNavigator = createStackNavigator({
