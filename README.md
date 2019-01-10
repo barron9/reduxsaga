@@ -1,8 +1,6 @@
 <html>
 
 <code>
-git clone ... .git
-npm install
-react-native run-android
+RN57 & react navigation 3 & redux & redux saga & react-native-paper & react-native-localization 
 </code>
 </html>
